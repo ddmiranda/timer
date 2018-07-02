@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Hello Caching World!</title>
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style>
+    @media (display-mode: fullscreen) {}
+
+    #element:-webkit-full-screen {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    #element:-ms-full-screen {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Courier New', 'Lato', sans-serif;
+    }
+
+    p {
+      text-align: center;
+      font-size: 8vw;
+    }
+
+    .apagado {
+      background-color: black;
+    }
+
+    .ligado {
+      background-color: white;
+    }
+
+    .displaynone {
+      display: none;
+    }
+
+    .enable {
+      background-color: white;
+      color: white;
+    }
+
+    .disable {
+      background-color: #111111;
+      color: #111111;
+    }
+  </style>
+</head>
+
+<body class="apagado">
+  <div class="container" id="container" onclick="GoInFullscreen()">
+    <p>
+      <span id="a1" class='enable'>&nbsp;</span>
+      <span id="a2" class='enable'>&nbsp;</span>
+      <span id="a3" class='enable'>&nbsp;</span>
+      <span id="a4" class='enable'>&nbsp;</span>
+      <span id="a5" class='enable'>&nbsp;</span>
+      <span id="a6" class='enable'>&nbsp;</span>
+      <span id="a7" class='enable'>&nbsp;</span>
+      <span id="a8" class='enable'>&nbsp;</span>
+      <span id="a9" class='enable'>&nbsp;</span>
+      <span id="a10" class='enable'>&nbsp;</span>
+    </p>
+    <p>
+      <span id="b1" class='enable'>&nbsp;</span>
+      <span id="b2" class='enable'>&nbsp;</span>
+      <span id="b3" class='enable'>&nbsp;</span>
+      <span id="b4" class='enable'>&nbsp;</span>
+      <span id="b5" class='enable'>&nbsp;</span>
+      <span id="b6" class='enable'>&nbsp;</span>
+      <span id="b7" class='enable'>&nbsp;</span>
+      <span id="b8" class='enable'>&nbsp;</span>
+      <span id="b9" class='enable'>&nbsp;</span>
+      <span id="b10" class='enable'>&nbsp;</span>
+    </p>
+  </div>
+  <!-- JavaScript -->
+  <script src="./js/NoSleep.min.js"></script>
+  <script>
+    var noSleep = new NoSleep();
+    function GoInFullscreen() {
+      noSleep.enable();
+      var element = document.body
+      if (document.requestFullscreen)
+        element.requestFullscreen();
+      else if (element.mozRequestFullScreen)
+        element.mozRequestFullScreen();
+      else if (element.webkitRequestFullscreen)
+        element.webkitRequestFullscreen();
+      else if (element.msRequestFullscreen)
+        element.msRequestFullscreen();
+    }
+  </script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
